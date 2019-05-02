@@ -59,7 +59,10 @@ module OmniAuth
           :code         => request.params['code'],
           :redirect_uri => callback_url
         }
-
+        puts " *************** HERE SHOW CLIENT PARAMS "
+        puts client.auth_code
+        puts "**************** 2 "
+        puts client.auth_code.client_params 
         params.merge! client.auth_code.client_params
         params.merge! token_params.to_hash(:symbolize_keys => true)
 
